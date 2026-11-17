@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Dev Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=JetBrains+Mono:wght@500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span>&lt;/&gt;</span>WebDev Quiz</div>
+    <button id="themeBtn" type="button" aria-label="Toggle dark and light mode"></button>
+  </header>
+
+  <!-- Start screen -->
+  <section id="startScreen" class="card">
+    <h1>How well do you know the web?</h1>
+    <p class="muted">Twelve questions on HTML, CSS and JavaScript. Questions and answers are shuffled every time you play.</p>
+    <ul class="facts">
+      <li>20 seconds per question. When time runs out, the quiz moves on.</li>
+      <li>On a keyboard, press 1&ndash;4 to answer and Enter for the next question.</li>
+    </ul>
+    <p class="best" id="bestScore"></p>
+    <button id="startBtn" class="primary" type="button">Start quiz</button>
+  </section>
+
+  <!-- Quiz screen -->
+  <section id="quizScreen" class="card hidden" aria-live="polite">
+    <div class="meta"><span id="counter"></span><span id="timerText"></span></div>
+    <div class="bar" role="progressbar" aria-label="Quiz progress"><i id="progressFill"></i></div>
+    <div class="bar time" id="timeBar"><i id="timeFill"></i></div>
+    <h2 class="question" id="questionText"></h2>
+    <div class="options" id="options"></div>
+    <p class="feedback" id="feedback"></p>
+    <div class="actions"><button id="nextBtn" class="primary" type="button" disabled>Next</button></div>
+  </section>
+
+  <!-- Result screen -->
+  <section id="resultScreen" class="card hidden">
+    <h2 id="resultMessage"></h2>
+    <div class="score"><span id="scoreNum"></span> <small id="scorePct"></small></div>
+    <p class="muted" id="bestNote"></p>
+    <div class="btnrow">
+      <button id="restartBtn" class="primary" type="button">Play again</button>
+    </div>
+    <ul class="review" id="reviewList"></ul>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
